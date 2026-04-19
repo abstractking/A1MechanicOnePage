@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "A1 Solutions 24 | Mobile Mechanic"
+version = "1.0.0"
+id = "artifacts/a1-solutions"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19813
+
+[services.development]
+run = "pnpm --filter @workspace/a1-solutions run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/a1-solutions", "run", "build" ]
+publicDir = "artifacts/a1-solutions/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19813"
+BASE_PATH = "/"
