@@ -61,8 +61,9 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="bg-[#2D2D2D] p-8 border-2 border-[#888888] hover:border-[#FF8C00] cursor-default flex flex-col h-full"
+              className="bg-[#2D2D2D] border-2 border-[#888888] hover:border-[#FF8C00] cursor-default flex flex-col h-full"
               style={{
+                padding: 'clamp(1.25rem, 3vw, 2rem)',
                 transition:
                   'border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
               }}

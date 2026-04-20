@@ -35,7 +35,8 @@ const Coverage = () => {
           {areas.map((area, i) => (
             <motion.div
               key={area.state}
-              className="bg-[#2D2D2D] border-2 border-[#888888] p-8"
+              className="bg-[#2D2D2D] border-2 border-[#888888]"
+              style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
@@ -59,7 +60,8 @@ const Coverage = () => {
         </div>
 
         <motion.div
-          className="mt-10 text-center bg-[#0D0D0D] border border-[#FF8C00]/30 p-6"
+          className="mt-10 text-center bg-[#0D0D0D] border border-[#FF8C00]/30"
+          style={{ padding: 'clamp(1rem, 2.5vw, 1.5rem)' }}
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.4 }}
