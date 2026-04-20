@@ -40,7 +40,7 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
 
-          {/* Form column — y-only animation, no horizontal drift */}
+          {/* Form */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -101,7 +101,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Info column — y-only animation, no horizontal drift */}
+          {/* Contact info — no redundant emergency CTA */}
           <motion.div
             className="flex flex-col gap-4 min-w-0"
             initial={{ opacity: 0, y: 24 }}
@@ -116,7 +116,7 @@ const Contact = () => {
               <div
                 key={info.label}
                 className="bg-[#1A1A1A] border border-[#2D2D2D] hover:border-[#FF8C00]/50 transition-colors flex gap-4 items-center min-w-0"
-                style={{ padding: 'clamp(0.875rem, 2vw, 1.25rem)' }}
+                style={{ padding: 'clamp(1rem, 2vw, 1.375rem)' }}
               >
                 <span className="text-2xl flex-shrink-0" aria-hidden="true">{info.icon}</span>
                 <div className="min-w-0 flex-1">
@@ -145,23 +145,6 @@ const Contact = () => {
                 </div>
               </div>
             ))}
-
-            {/* Emergency call block */}
-            <div className="bg-[#FF8C00] text-center" style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
-              <p
-                className="font-['Barlow_Condensed'] text-[#0D0D0D] font-bold uppercase tracking-wider"
-                style={{ fontSize: 'clamp(0.65rem, 1vw, 0.75rem)', marginBottom: '0.25rem' }}
-              >
-                For Emergencies — Call Immediately
-              </p>
-              <a
-                href="tel:14097797780"
-                className="font-['Barlow_Condensed'] text-[#0D0D0D] font-bold tracking-wide block"
-                style={{ fontSize: 'clamp(1.5rem, 5vw, 2.25rem)', lineHeight: 1.2, minHeight: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                1-409-779-7780
-              </a>
-            </div>
           </motion.div>
         </div>
       </div>
