@@ -47,29 +47,44 @@ const Services = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h2 className="font-['Barlow_Condensed'] text-[clamp(2.5rem,6vw,4rem)] text-[#FF8C00] tracking-[4px] uppercase mb-4">
+          <h2
+            className="font-['Barlow_Condensed'] text-[#FF8C00] uppercase mb-4"
+            style={{ fontSize: 'clamp(2rem, 4vw + 1rem, 4rem)', letterSpacing: '4px' }}
+          >
             Our Services
           </h2>
-          <p className="text-[clamp(1rem,2vw,1.25rem)] text-[#999999] max-w-xl mx-auto">
+          <p
+            className="text-[#B8B8B8] max-w-xl mx-auto"
+            style={{ fontSize: 'clamp(0.875rem, 1.5vw + 0.25rem, 1.25rem)' }}
+          >
             Professional mobile mechanic services — We bring the shop to you
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Grid: items-stretch ensures equal-height rows */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="bg-[#2D2D2D] p-8 border-2 border-[#666666] hover:border-[#FF8C00] hover:shadow-[0_8px_24px_rgba(255,140,0,0.2)] transition-all duration-300 cursor-default"
+              className="bg-[#2D2D2D] p-8 border-2 border-[#888888] hover:border-[#FF8C00] cursor-default flex flex-col h-full"
+              style={{
+                transition:
+                  'border-color 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease-out, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)',
+              }}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -8, boxShadow: '0 8px 24px rgba(255,140,0,0.2)' }}
             >
-              <div className="text-5xl mb-5">{service.icon}</div>
-              <h3 className="font-['Barlow_Condensed'] text-[clamp(1.2rem,2.5vw,1.4rem)] text-white font-bold tracking-wide uppercase mb-3">
+              <div className="text-5xl mb-5" aria-hidden="true">{service.icon}</div>
+              <h3
+                className="font-['Barlow_Condensed'] text-white font-bold tracking-wide uppercase mb-3"
+                style={{ fontSize: 'clamp(1.1rem, 2vw + 0.25rem, 1.4rem)' }}
+              >
                 {service.title}
               </h3>
-              <p className="text-[#999999] leading-relaxed text-sm">
+              {/* flex-grow pushes description to fill remaining card height */}
+              <p className="text-[#B8B8B8] leading-relaxed flex-grow" style={{ fontSize: 'clamp(0.875rem, 1vw + 0.25rem, 1rem)' }}>
                 {service.description}
               </p>
             </motion.div>
