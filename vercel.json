@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pnpm --filter @workspace/a1-solutions run build",
+  "outputDirectory": "artifacts/a1-solutions/dist/public",
+  "installCommand": "pnpm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
