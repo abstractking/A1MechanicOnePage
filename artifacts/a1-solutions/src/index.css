@@ -129,25 +129,42 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  /* Explicitly stop spinning elements */
+  .gear-bg,
+  [data-gear],
+  [data-gear] span,
+  [style*="spin"] {
+    animation: none !important;
+  }
 }
 
 /* Print stylesheet */
 @media print {
+  /* Broad color reset for all elements */
+  * {
+    color: #000 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
   .gear-bg,
-  [data-gear] {
+  [data-gear],
+  [data-gear] * {
     display: none !important;
   }
 
   body {
-    background: white !important;
-    color: black !important;
     font-size: 12pt;
   }
 
   a[href^="tel"]::after {
     content: " (" attr(href) ")";
     font-size: 0.85em;
-    color: #333;
+    color: #333 !important;
   }
 
   nav,
@@ -157,16 +174,5 @@ a:focus-visible {
 
   section {
     page-break-inside: avoid;
-    background: white !important;
-    color: black !important;
-  }
-
-  h1, h2, h3 {
-    color: black !important;
-  }
-
-  * {
-    animation: none !important;
-    transition: none !important;
   }
 }
