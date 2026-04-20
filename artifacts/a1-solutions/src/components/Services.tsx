@@ -39,10 +39,11 @@ const Services = () => {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="services" className="py-24 bg-[#1A1A1A]" ref={ref}>
+    <section id="services" className="py-16 sm:py-24 bg-[#1A1A1A] overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
-          className="text-center mb-14"
+          className="text-center"
+          style={{ marginBottom: 'clamp(2rem, 5vw, 3.5rem)' }}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}

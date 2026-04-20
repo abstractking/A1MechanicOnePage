@@ -13,13 +13,13 @@ const About = () => {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="about" className="py-24 bg-[#0D0D0D]" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+    <section id="about" className="py-16 sm:py-24 bg-[#0D0D0D] overflow-hidden" ref={ref}>
+      <div className="max-w-7xl mx-auto" style={{ padding: '0 clamp(1rem, 5vw, 2rem)' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2
               className="font-['Barlow_Condensed'] text-[#FF8C00] uppercase mb-6"
@@ -54,9 +54,9 @@ const About = () => {
 
           <motion.div
             className="grid grid-cols-2 gap-5"
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+            initial={{ opacity: 0, y: 28 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
           >
             {stats.map((stat, i) => (
               <motion.div
