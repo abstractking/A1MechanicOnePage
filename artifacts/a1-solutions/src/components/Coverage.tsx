@@ -12,7 +12,7 @@ const Coverage = () => {
 
   return (
     <section id="coverage" className="py-16 sm:py-24 bg-[#1A1A1A] overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto" style={{ padding: '0 clamp(1.25rem, 5vw, 2.5rem)' }}>
         <motion.div
           className="text-center"
           style={{ marginBottom: 'clamp(2rem, 5vw, 3.5rem)' }}
