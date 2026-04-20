@@ -47,8 +47,7 @@ const About = () => {
               whileTap={{ scale: 0.98 }}
               aria-label="Call Bill at 1-409-779-7780"
             >
-              <span aria-hidden="true">📞</span>
-              <span>Call Bill: 1-409-779-7780</span>
+              Call Bill: 1-409-779-7780
             </motion.a>
           </motion.div>
 

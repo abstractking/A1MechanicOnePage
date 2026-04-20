@@ -5,32 +5,26 @@ const services = [
   {
     title: '24/7 Emergency Roadside Repair',
     description: 'Stranded? We come to you. Fast response for breakdowns, flat tires, battery jumps, and emergency mechanical issues.',
-    icon: '🚨'
   },
   {
     title: 'Complete Vehicle Diagnostics',
     description: 'Advanced diagnostic equipment to identify and repair engine, transmission, electrical, and computer system problems.',
-    icon: '🔍'
   },
   {
     title: 'Engine Repair & Maintenance',
     description: 'Expert engine work including oil changes, tune-ups, belt replacement, and major engine overhauls.',
-    icon: '⚙️'
   },
   {
     title: 'Brake System Service',
     description: 'Complete brake inspection, pad/rotor replacement, fluid service, and ABS system diagnostics and repair.',
-    icon: '🛑'
   },
   {
     title: 'Electrical System Repair',
     description: 'Battery testing and replacement, alternator repair, starter service, and complete electrical troubleshooting.',
-    icon: '⚡'
   },
   {
     title: 'On-Site Fleet Maintenance',
     description: 'Mobile maintenance programs for commercial fleets. Keep your vehicles running without downtime.',
-    icon: '🚛'
   }
 ];
 
@@ -77,7 +71,6 @@ const Services = () => {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
               whileHover={{ y: -8, boxShadow: '0 8px 24px rgba(255,140,0,0.2)' }}
             >
-              <div className="text-5xl mb-5" aria-hidden="true">{service.icon}</div>
               <h3
                 className="font-['Barlow_Condensed'] text-white font-bold tracking-wide uppercase mb-3"
                 style={{ fontSize: 'clamp(1.1rem, 2vw + 0.25rem, 1.4rem)' }}

@@ -164,17 +164,16 @@ const Hero = () => {
           transition={{ duration: 0.4, delay: 0.65 }}
         >
           {[
-            { icon: '⚡', text: '24/7 Available' },
-            { icon: '🚗', text: 'Mobile Service' },
-            { icon: '🔧', text: 'Expert Repairs' },
-          ].map((badge) => (
+            '24/7 Available',
+            'Mobile Service',
+            'Expert Repairs',
+          ].map((text) => (
             <div
-              key={badge.text}
-              className="flex items-center gap-2 text-[#B8B8B8] font-['Barlow_Condensed'] font-semibold uppercase tracking-wide"
+              key={text}
+              className="text-[#B8B8B8] font-['Barlow_Condensed'] font-semibold uppercase tracking-wide"
               style={{ fontSize: 'clamp(0.7rem, 1.5vw, 0.875rem)' }}
             >
-              <span aria-hidden="true" style={{ fontSize: 'clamp(0.875rem, 2.5vw, 1.125rem)' }}>{badge.icon}</span>
-              <span>{badge.text}</span>
+              {text}
             </div>
           ))}
         </motion.div>
